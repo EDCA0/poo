@@ -10,9 +10,9 @@ export class ProductMemoryService {
 	create (data: CreateProductDto): Product {
 		const newProduct = {
 	  ...data,
-	  id: Number(faker.string.uuid),
+	  id: faker.number.int(),
 	  category: {
-			id: faker.number,
+			id: data.categoryId,
 			name: faker.commerce.department(),
 			image: faker.image.url(),
 	  }
@@ -39,4 +39,8 @@ updateProduct  (id: Product['id'], changes: UpdateProductDto ): Product {
  findOne (id : Product["id"]) {
 	return this.products.find(item => item.id === id)
  }
+
+ 	getAll () {
+		return this.products;
+	}
 }

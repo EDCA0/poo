@@ -1,7 +1,5 @@
-import { NumberModule } from "@faker-js/faker/.";
-
 export interface Category {
-	id:         number | NumberModule;
+	id:         number;
 	name:       string;
 	image:      string;
 }
